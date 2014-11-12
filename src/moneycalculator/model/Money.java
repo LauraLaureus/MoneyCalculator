@@ -3,18 +3,20 @@ package moneycalculator.model;
 public class Money {
 
     private final Currency currency;
-    private final int amount;
+    private final float amount;
 
-    public Money() {
-        this.currency = null;
-        this.amount = 0;
+    public Money(Currency currency, float amount) {
+        this.currency = currency;
+        this.amount = amount;
     }
+
+    
 
     public Currency getCurrency() {
         return currency;
     }
 
-    public int getAmount() {
+    public float getAmount() {
         return amount;
     }
     

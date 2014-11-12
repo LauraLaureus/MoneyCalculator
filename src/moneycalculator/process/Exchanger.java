@@ -8,12 +8,10 @@ public class Exchanger {
     
 
     public static Money exchange (Exchange exchange, ExchangeRate rate){
-        Money result = new Money();
-        
-        int amount = exchange.getMoney().getAmount();
-        
-        rate.
-        
-        return result;
+        return new Money(exchange.getCurrency(), computeAmount(exchange, rate));
+    }
+
+    private static float computeAmount(Exchange exchange, ExchangeRate rate) {
+        return exchange.getMoney().getAmount()*rate.getRate();
     }
 }
