@@ -6,7 +6,6 @@ import moneycalculator.model.CurrencySet;
 import moneycalculator.model.Exchange;
 import moneycalculator.model.ExchangeRate;
 import moneycalculator.model.Money;
-import moneycalculator.persistence.CurrencySetLoader;
 import moneycalculator.persistence.ExchangeRateLoader;
 import moneycalculator.process.Exchanger;
 
@@ -20,8 +19,9 @@ public class ExchangeCommand {
     
     public void execute(){
         ExchangeDialog eDialog = new ExchangeDialog();
+        
         Exchange exchange = eDialog.getExchange();
-        ExchangeRate rate = ExchangeRateLoader.load(exchange);
+        ExchangeRate rate = new ExchangeRateLoader()
         Money exchanged = Exchanger.exchange(exchange,rate);
         MoneyDisplay display = new MoneyDisplay(exchanged);
     }
