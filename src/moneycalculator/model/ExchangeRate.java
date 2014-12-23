@@ -3,22 +3,22 @@ package moneycalculator.model;
 public class ExchangeRate {
 
 
-    private final Currency from;
-    private final Currency to;
+    private final String codefrom;
+    private final String codeto;
     private final float rate;
 
-    public ExchangeRate(Currency from, Currency to, float rate) {
-        this.from = from;
-        this.to = to;
+    public ExchangeRate(String from, String to, float rate) {
+        this.codefrom = from;
+        this.codeto = to;
         this.rate = rate;
     }
 
-    public Currency getFrom() {
-        return from;
+    public String getFrom() {
+        return codefrom;
     }
 
-    public Currency getTo() {
-        return to;
+    public String getTo() {
+        return codeto;
     }
 
     public float getRate() {

@@ -3,6 +3,7 @@ package moneycalculator;
 import java.util.Set;
 import moneycalculator.control.ExchangeCommand;
 import moneycalculator.model.CurrencySet;
+import moneycalculator.persistence.CVSExchangeRateLoader;
 import moneycalculator.persistence.CurrencySetLoader;
 
 public class MoneyCalculator {
@@ -13,8 +14,9 @@ public class MoneyCalculator {
     public static void main(String[] args) {
         
         currencySet = new CurrencySetLoader().load();
-         showTest();
+         //showTest();
         
+        CVSExchangeRateLoader cvs = new CVSExchangeRateLoader();
         /*ExchangeCommand cmd = new ExchangeCommand(currencySet);
         cmd.execute();*/
     }

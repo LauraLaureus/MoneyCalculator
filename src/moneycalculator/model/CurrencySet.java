@@ -10,13 +10,16 @@ public class CurrencySet {
     public CurrencySet() {
         this.map = new HashMap<>();
     }
-    
-    public void add(String code, Currency currency){
-        map.put(code,currency);
+
+    public void add(String code, Currency currency) {
+        map.put(code, currency);
     }
-    
-    public Set<String> getCodes(){
+
+    public Set<String> getCodes() {
         return map.keySet();
-}
-    
+    }
+
+    public Currency getcurrencyFromCode(String code){
+        return map.get(code);
+    }
 }
