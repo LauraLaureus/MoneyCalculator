@@ -1,25 +1,34 @@
 package moneycalculator.persistence;
 
-import java.sql.Connection;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import moneycalculator.model.Currency;
 import moneycalculator.model.CurrencySet;
 
 public class CurrencySetLoader {
     
-    private final Connection conn;
-
-    public CurrencySetLoader(Connection conn) {
-        this.conn = conn;
+    private static final String path = "C:\\Users\\Laura\\Documents\\GitHub\\MoneyCalculator\\CurrencyList";
+    private CurrencyReader reader;
+    
+    public CurrencySetLoader() {
+            this.reader = new CurrencyReader(path);
     }
 
     
     public CurrencySet load(){
         
-        /*
-        Crea un CurrencySet
-        Lo llena con los currency de la base de datos 
-        Lo devuelve
-        */
+        CurrencySet result = new CurrencySet();
+        Currency newCurrency;
+       
+        while(reader.hasCurrencies()){
+            newCurrency = reader.getNextCurrency();
+            result.add(newCurrency.getCode(), newCurrency);
+        }
         
-        return null;
+        
+        return result;
     }
 }

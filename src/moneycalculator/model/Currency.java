@@ -6,10 +6,10 @@ public class Currency {
         private final String name;
         private final String symbol;
 
-    public Currency() {
-        this.code = null;
-        this.name = null;
-        this.symbol = null;
+    public Currency(String code, String name, String symbol) {
+        this.code = code;
+        this.name = name;
+        this.symbol = symbol;
     }
 
     public String getCode() {
