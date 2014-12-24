@@ -19,7 +19,13 @@ public class CurrencySet {
         return map.keySet();
     }
 
-    public Currency getcurrencyFromCode(String code){
+    public Currency getCurrencyFromCode(String code){
         return map.get(code);
     }
+    
+    public int size(){
+        return map.size();
+    }
+    
+    
 }
