@@ -17,9 +17,11 @@ public class MoneyCalculator {
         currencySet = new CurrencySetLoader().load();
         cvs = new CVSExchangeRateLoader();
         
+        ExchangeCommand cmd = new ExchangeCommand(currencySet,cvs);
+        
         /*
         OJO: Aquí debería añadir el cvs como parámetro
-        ExchangeCommand cmd = new ExchangeCommand(currencySet);
+       
         cmd.execute();*/
     }
     

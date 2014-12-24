@@ -14,23 +14,23 @@ public class ApplicationFrame extends JFrame implements ExchangeDialog {
     private ExchangeDialog exchage;
     private MoneyDisplay display;
     
-    public  ApplicationFrame (ActionListener aL, CurrencySet currencies){
+    public  ApplicationFrame (CurrencySet currencies){
         
         this.setTitle("Money calculator");
-        this.setSize(500,500);
+        this.setSize(500,100);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        this.getContentPane().add(createExchangeDialogPanel(currencies,aL),BorderLayout.NORTH);
+        this.getContentPane().add(createExchangeDialogPanel(currencies),BorderLayout.NORTH);
         this.getContentPane().add(createMoneyPanel(), BorderLayout.SOUTH);
         
         this.setVisible(true);
         
     }
 
-    private ExchangeDialogPanel createExchangeDialogPanel(CurrencySet currencies, ActionListener aL) {
+    private ExchangeDialogPanel createExchangeDialogPanel(CurrencySet currencies) {
         this.exchage = new ExchangeDialogPanel(currencies);
-        ((ExchangeDialogPanel)this.exchage).register(aL);
+        
         return (ExchangeDialogPanel) this.exchage;
     }
 
@@ -48,4 +48,7 @@ public class ApplicationFrame extends JFrame implements ExchangeDialog {
         return this.exchage.getExchange();
     }
     
+    public void register(ActionListener aL){
+        ((ExchangeDialogPanel)this.exchage).register(aL);
+    }
 }

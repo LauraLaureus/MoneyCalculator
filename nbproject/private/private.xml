@@ -3,11 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/persistence/CurrencySetLoader.java</file>
-            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/MoneyCalculator.java</file>
-            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/persistence/ExchangeRateLoader.java</file>
-            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/persistence/OracleConnection.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/persistence/CVSExchangeRateLoader.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/gui/swing/CurrencySelector.java</file>
             <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/control/ExchangeCommand.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/MoneyCalculator.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/gui/swing/MoneyDisplay.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/gui/swing/ExchangeArea.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/gui/swing/ExchangeDialogPanel.java</file>
+            <file>file:/C:/Users/Laura/Documents/GitHub/MoneyCalculator/src/moneycalculator/gui/swing/ApplicationFrame.java</file>
         </group>
     </open-files>
 </project-private>

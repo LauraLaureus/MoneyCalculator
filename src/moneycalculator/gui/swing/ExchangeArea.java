@@ -24,9 +24,9 @@ public class ExchangeArea extends JPanel implements ExchangeDialog {
         amount = 0;
         
         this.setLayout(new FlowLayout());
-        this.add(createAmountField());
-        this.add(createCurrencySelectorFrom(options,currencies));
-        this.add(createCurrencySelectorTo(options,currencies));
+        this.add(createAmountField(),0);
+        this.add(createCurrencySelectorFrom(options,currencies),1);
+        this.add(createCurrencySelectorTo(options,currencies),2);
         
 
     }
@@ -61,7 +61,7 @@ public class ExchangeArea extends JPanel implements ExchangeDialog {
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() != ItemEvent.SELECTED) return;
                 fromCurrency = 
-                        (Currency) cSelector.getItemAt(cSelector.getSelectedIndex());
+                        cSelector.getSelectedCurrency();
             }
         });
         
@@ -77,7 +77,7 @@ public class ExchangeArea extends JPanel implements ExchangeDialog {
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() != ItemEvent.SELECTED) return;
                 toCurrency = 
-                        (Currency) cSelector.getItemAt(cSelector.getSelectedIndex());
+                         cSelector.getSelectedCurrency();
             }
         });
         
@@ -86,7 +86,8 @@ public class ExchangeArea extends JPanel implements ExchangeDialog {
     
     @Override
     public Exchange getExchange() {
-        return new Exchange(new Money(fromCurrency, (float) amount), toCurrency);
+        return new Exchange(new Money(
+                fromCurrency, (float) amount), toCurrency);
     }
 
 }

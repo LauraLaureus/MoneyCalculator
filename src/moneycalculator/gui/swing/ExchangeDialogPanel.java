@@ -11,24 +11,25 @@ import moneycalculator.model.Exchange;
 
 public class ExchangeDialogPanel extends JPanel implements ExchangeDialog {
 
-    private CurrencySet currencies;
     private ActionListener actionListener;
+    private ExchangeArea exchangeArea;
     
     public ExchangeDialogPanel(CurrencySet set){
         
         String[] options = CurrencySelector.buildOptionsArray(set);
         this.setLayout(new BorderLayout());
-        this.add(createExchangeArea(options,currencies) , BorderLayout.LINE_START );
+        this.add(createExchangeArea(options,set) , BorderLayout.LINE_START );
         this.add(createActionButton(), BorderLayout.CENTER);
     }
             
     @Override
     public Exchange getExchange() {
-        return ((ExchangeArea)this.getComponent(0)).getExchange();
+        return exchangeArea.getExchange();
     }
 
     private ExchangeArea createExchangeArea(String[] options, CurrencySet currencies) {
-        return new ExchangeArea(options, currencies);
+        this.exchangeArea =  new ExchangeArea(options, currencies);
+        return this.exchangeArea;
     }
 
     private JButton createActionButton() {
